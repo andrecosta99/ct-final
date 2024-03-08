@@ -1,8 +1,9 @@
-from git import Repo
-import tempfile
-import shutil
-from collections import Counter
 import logging
+import shutil
+import tempfile
+from collections import Counter
+
+from git import Repo
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"

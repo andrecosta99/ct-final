@@ -1,5 +1,5 @@
 import dash_bootstrap_components as dbc
-from dash import html, dcc
+from dash import dcc, html
 
 
 def create_layout(app):
@@ -10,10 +10,13 @@ def create_layout(app):
                 dbc.Row(
                     [
                         dbc.Col(
-                            html.Img(src="https://images.emojiterra.com/twitter/v13.1/512px/1f4c8.png", height="30px", style={"marginLeft": "20px"})
+                            html.Img(
+                                src="https://images.emojiterra.com/twitter/v13.1/512px/1f4c8.png",
+                                height="30px",
+                                style={"marginLeft": "20px"},
+                            )
                         ),
                         dbc.Col(dbc.NavbarBrand("Commit Tracker", className="ml-2")),
-
                     ],
                     align="center",
                 ),

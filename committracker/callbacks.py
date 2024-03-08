@@ -1,9 +1,11 @@
-from dash import Input, Output, State, html, dcc
-import plotly.graph_objs as go
-import pandas as pd
-import shutil
 import os
-from .git_stats import clone_remote_repo, extract_git_stats, extract_branches_info_new
+import shutil
+
+import pandas as pd
+import plotly.graph_objs as go
+from dash import Input, Output, State, dcc, html
+
+from .git_stats import clone_remote_repo, extract_branches_info_new, extract_git_stats
 
 
 def register_callbacks(app):
