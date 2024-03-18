@@ -1,5 +1,10 @@
 from git import Repo
 from collections import Counter
+from dash import html
+import logging
+import dash_bootstrap_components as dbc
+
+
 
 def extract_git_stats(repo_path):
     try:
@@ -45,8 +50,6 @@ def categorize_commit_type(commit_message):
     else:
         return "Other"
 
-from dash import html
-
 def extract_branches_info(repo_path):
     try:
         repo = Repo(repo_path)
@@ -57,6 +60,7 @@ def extract_branches_info(repo_path):
             branches_info[branch_name] = commits_count
         return branches_info
     except Exception as e:
+        logging.error(f"Error extracting branches information: {e}")
         return {"error": str(e)}
 
 def display_git_statistics(repo_path):
@@ -64,10 +68,23 @@ def display_git_statistics(repo_path):
     if "error" in stats:
         return html.Div(f"Error: {stats['error']}")
 
-    return html.Div([
-        html.H3("Git Statistics"),
-        html.P(f"Total Commits: {stats['total_commits']}"),
-        html.P(f"Average Lines per Commit: {stats['average_lines_per_commit']}"),
-        html.Div([html.H4("Contributors"), html.Ul([html.Li(f"{contributor}: {count}") for contributor, count in stats['contributors'].items()])]),
-        html.Div([html.H4("Commit Types"), html.Ul([html.Li(f"{ctype}: {count}") for ctype, count in stats['commit_types'].items()])])
-    ])
+
+    return html.Div(
+        dbc.Card(
+            dbc.CardBody([
+                html.H4("Git Statistics", className="card-title"),
+                html.P(f"Total Commits: {stats['total_commits']}"),
+                html.P(f"Average Lines per Commit: {stats['average_lines_per_commit']}"),
+                html.Div([
+                    html.H5("Contributors", className="card-subtitle"),
+                    html.Ul([html.Li(f"{contributor}: {count}") for contributor, count in stats['contributors'].items()])
+                ]),
+                html.Div([
+                    html.H5("Commit Types", className="card-subtitle"),
+                    html.Ul([html.Li(f"{ctype}: {count}") for ctype, count in stats['commit_types'].items()])
+                ])
+            ]),
+            className="mb-4"
+        ),
+        className="mt-4"
+    )
