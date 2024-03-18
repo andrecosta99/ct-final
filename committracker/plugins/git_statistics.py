@@ -34,7 +34,6 @@ def extract_git_stats(repo_path):
     except Exception as e:
         return {"error": str(e)}
 
-
 def categorize_commit_type(commit_message):
     lower_msg = commit_message.lower()
     if "fix" in lower_msg or "bug" in lower_msg:
@@ -45,6 +44,8 @@ def categorize_commit_type(commit_message):
         return "Documentation"
     else:
         return "Other"
+
+from dash import html
 
 def extract_branches_info(repo_path):
     try:
@@ -57,8 +58,6 @@ def extract_branches_info(repo_path):
         return branches_info
     except Exception as e:
         return {"error": str(e)}
-
-from dash import html
 
 def display_git_statistics(repo_path):
     stats = extract_git_stats(repo_path)
