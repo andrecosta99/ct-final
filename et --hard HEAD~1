@@ -1,0 +1,101 @@
+[33mcommit be344d9518109fe060366f255ac34b2bcecd5eb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: andrecosta99 <afmcosta@gmail.com>
+Date:   Mon Mar 18 12:15:24 2024 +0000
+
+    Update User Interface and Plugins Names in the UI
+
+[33mcommit 34e6087c485a822124857f27b2d9ffc023383537[m
+Author: andrecosta99 <afmcosta@gmail.com>
+Date:   Mon Mar 18 10:34:58 2024 +0000
+
+    Update plugins visualization in UI as 'cards'
+
+[33mcommit dbb09948499d227c08b6779fdfb286224586e4cb[m
+Merge: a80efc6 0e77b5f
+Author: andrecosta99 <afmcosta@gmail.com>
+Date:   Mon Mar 18 10:02:13 2024 +0000
+
+    Refactor Dash app for dynamic plugin loading and enhanced UI interaction
+
+[33mcommit a80efc6d17e28e0470f42cfd6a060d777831d969[m
+Author: andrecosta99 <afmcosta@gmail.com>
+Date:   Sun Mar 17 21:48:48 2024 +0000
+
+    Refactor Dash app for dynamic plugin loading and enhanced UI interaction
+
+[33mcommit 0e77b5fab4a976bf94a2bd143cb73a71a544820f[m
+Merge: 90fc7df 5f6b197
+Author: André F. Costa <afmcosta@gmail.com>
+Date:   Fri Mar 8 14:12:35 2024 +0000
+
+    Merge pull request #1 from nunofachada/master
+
+    Black and isort improvements
+
+[33mcommit 5f6b197783ae9220950403a7c1e6d60e06ab08d6[m
+Author: Nuno Fachada <faken@fakenmc.com>
+Date:   Fri Mar 8 14:06:20 2024 +0000
+
+    Black and isort improvements
+
+[33mcommit 90fc7dfff91ac62a5d2f49bd4467a873bcc9224e[m
+Author: andrecosta99 <afmcosta@gmail.com>
+Date:   Fri Mar 8 13:49:08 2024 +0000
+
+    Enhance project UI and code quality: Fix Navbar image path for web server compatibility, configure pre-commit hooks for code consistency, add development dependencies for security and linting, adjust Navbar image margin for improved layout, and update UI for statistics descriptions.
+
+[33mcommit 277f58d827eeb35ded55fa70982059bfdba49ad3[m
+Author: andrecosta99 <afmcosta@gmail.com>
+Date:   Thu Feb 29 22:41:35 2024 +0000
+
+    Update project documentation and add new tests
+
+[33mcommit cb7348e4e3c01801830521a00aad978586a638fc[m
+Author: andrecosta99 <afmcosta@gmail.com>
+Date:   Thu Feb 29 20:26:59 2024 +0000
+
+    Refactor project structure for package execution and plugin integration
+
+    This commit updates the project structure to support execution as a standalone package. It includes adjustments in the module import paths and the setup for package installation. Additionally, it integrates new plugin functionalities, enhancing the application's modular architecture. These changes ensure smoother installation and execution processes for end-users, facilitating the deployment and scalability of the Commit Tracker application.
+
+[33mcommit 48cc756a075c7338197e07dc9fa1f5c0cd2082e9[m
+Author: andrecosta99 <afmcosta@gmail.com>
+Date:   Thu Feb 29 17:09:58 2024 +0000
+
+    Refactoring project structure and fixing pyproject.toml issues
+
+[33mcommit 22f527c56b9d85d9c21ee3cd80d8c6b87792dc78[m
+Author: andrecosta99 <afmcosta@gmail.com>
+Date:   Thu Feb 22 18:05:11 2024 +0000
+
+    Implemented functions as plugins, structured, and published as package. Enhanced project structure for better modularity and maintainability. Prepared the project for distribution as a package, including setting up plugins for core functionalities, ensuring a more flexible and extensible application design. Also, made significant improvements in documentation and code organization to adhere to best practices in software development.
+
+[33mcommit 4a82c9876f3652d1269c08f5b9362d9548b6f26f[m
+Author: André F. Costa <afmcosta@gmail.com>
+Date:   Thu Feb 22 07:21:58 2024 +0000
+
+    Added documentation, prepared package for publication, and other improvements
+
+[33mcommit 0100451d292c2d95d806b2582bef5c4c98c78f52[m
+Author: André F. Costa <afmcosta@gmail.com>
+Date:   Sun Feb 18 18:08:51 2024 +0000
+
+    Atualização do layout e adição de novo logo
+
+[33mcommit a23e040ed4ca662d3ccbc34c30b29d6fecbc18b5[m
+Author: André F. Costa <afmcosta@gmail.com>
+Date:   Sun Feb 18 16:31:27 2024 +0000
+
+    Insert code, and respective files
+
+[33mcommit 4f778c71049b1466b9accfba425536a3004f03cb[m
+Author: André F. Costa <afmcosta@gmail.com>
+Date:   Sun Feb 18 16:12:39 2024 +0000
+
+    Adds GitHub Actions configurations, pre-commit setup, updates to pyproject.toml, and adds initial tests
+
+[33mcommit 951befa5b21ed4dc0a3f58a204ee327f791da1c4[m
+Author: André F. Costa <afmcosta@gmail.com>
+Date:   Sun Feb 18 15:01:12 2024 +0000
+
+    Initial commit
