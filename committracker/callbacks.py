@@ -3,6 +3,7 @@ from dash.exceptions import PreventUpdate
 from .utils import clone_remote_repo
 from .plugin_loader import load_plugins
 import dash_bootstrap_components as dbc
+from dash import callback, Output, Input, State
 
 PLUGIN_TITLES = {
     'git_statistics': 'Git Statistics',
@@ -10,6 +11,23 @@ PLUGIN_TITLES = {
     'branch_information': 'Branch Information',
 
 }
+
+@callback(
+    Output('url-error-message', 'children'),
+    Output('plugin-error-message', 'children'),
+    Input('load-repo-button', 'n_clicks'),
+    State('repo-input', 'value'),
+    State('plugin-selector', 'value'),
+    prevent_initial_call=True
+)
+def validate_input(n_clicks, url, selected_plugins):
+    url_error = ""
+    plugin_error = ""
+    if not url:
+        url_error = "Please enter a repository URL."
+    if not selected_plugins:
+        plugin_error = "Please select at least one plugin."
+    return url_error, plugin_error
 
 def register_callbacks(app):
     @app.callback(

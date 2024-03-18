@@ -50,6 +50,9 @@ def create_layout(app):
         className='mb-4'
     )
 
+    url_error_message = html.Div(id='url-error-message', style={'color': 'red'})
+    plugin_error_message = html.Div(id='plugin-error-message', style={'color': 'red'})
+
     plugin_output_area = html.Div(id='plugin-output-area')
 
     layout = html.Div([
@@ -62,6 +65,14 @@ def create_layout(app):
                 ),
                 dbc.Row(
                     dbc.Col(repo_input, width=12, lg=8),
+                    justify="center",
+                ),
+                dbc.Row(
+                    dbc.Col(url_error_message, width=12, lg=8),
+                    justify="center",
+                ),
+                dbc.Row(
+                    dbc.Col(plugin_error_message, width=12, lg=8),
                     justify="center",
                 ),
                 dbc.Row(
