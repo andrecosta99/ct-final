@@ -1,4 +1,5 @@
 import pytest
+
 from committracker.git_stats import categorize_commit_type
 
 
