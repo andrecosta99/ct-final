@@ -68,38 +68,32 @@ def extract_branches_info(repo_path):
 
 # Display Git statistics in a Dash component
 def display_git_statistics(repo_path):
-    stats = extract_git_stats(repo_path)  # Extract Git stats
+    stats = extract_git_stats(repo_path)
     if "error" in stats:
-        return html.Div(f"Error: {stats['error']}")  # Display error if any
+        return html.Div(f"Error: {stats['error']}")
 
-    # Stats presentation
     return html.Div(
         [
             html.H5("General Statistics"),
-            html.P(f"Total Commits: {stats['total_commits']}"),
-            html.P(f"Average Lines per Commit: {stats['average_lines_per_commit']}"),
+            html.Ul(
+                [
+                    html.Li(f"Total Commits: {stats['total_commits']}"),
+                    html.Li(f"Average Lines per Commit: {stats['average_lines_per_commit']:.2f}"),
+                ]
+            ),
             html.Div(
                 [
                     html.H5("Contributors"),
-                    html.Ul(
-                        [
-                            html.Li(f"{contributor}: {count}")
-                            for contributor, count in stats["contributors"].items()
-                        ]
-                    ),
+                    html.Ul([html.Li(f"{contributor}: {count}") for contributor, count in stats['contributors'].items()])
                 ]
             ),
             html.Div(
                 [
                     html.H5("Commit Types"),
-                    html.Ul(
-                        [
-                            html.Li(f"{ctype}: {count}")
-                            for ctype, count in stats["commit_types"].items()
-                        ]
-                    ),
+                    html.Ul([html.Li(f"{ctype}: {count}") for ctype, count in stats['commit_types'].items()])
                 ]
-            ),
+            )
         ],
-        className="mt-4",
+        className="mt-4"
     )
+

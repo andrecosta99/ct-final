@@ -1,7 +1,5 @@
 from unittest.mock import Mock, patch
-
 import pytest
-
 from committracker.plugins.git_statistics import (
     categorize_commit_type,
     extract_branches_info,
