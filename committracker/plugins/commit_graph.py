@@ -4,7 +4,7 @@ from dash import dcc
 from git import Repo
 from dash.exceptions import PreventUpdate
 
-# Função para extrair as datas dos commits de um repositório Git
+# Extract commits over time
 def extract_commit_dates(repo_path):
     try:
         repo = Repo(repo_path)
@@ -14,13 +14,11 @@ def extract_commit_dates(repo_path):
     except Exception as e:
         return {"error": str(e)}
 
-# Função para exibir o gráfico de commits ao longo do tempo
+# Display commits over times
 def display_commit_graph(repo_path):
     commit_dates = extract_commit_dates(repo_path)
     if "error" in commit_dates:
-        raise PreventUpdate  # ou retornar uma mensagem de erro ou gráfico vazio
-
-    # Prepare data frame with commit dates
+        raise PreventUpdate
     df = pd.DataFrame(
         {
             "Commit Date": pd.to_datetime(commit_dates, utc=True),

@@ -2,7 +2,7 @@ from collections import Counter
 from git import Repo
 from dash import html
 
-
+# Extract commit types
 def extract_commit_types(repo_path):
     try:
         repo = Repo(repo_path)
@@ -12,6 +12,7 @@ def extract_commit_types(repo_path):
     except Exception as e:
         return {"error": str(e)}
 
+# Categorize commits
 def categorize_commit_type(commit_message):
     commit_message = commit_message.lower()
     if "fix" in commit_message or "bug" in commit_message:
@@ -23,6 +24,7 @@ def categorize_commit_type(commit_message):
     else:
         return "Other"
 
+# Display commit types
 def display_commit_type(repo_path):
     commit_type = extract_commit_types(repo_path)
     if "error" in commit_type:

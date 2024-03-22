@@ -2,7 +2,7 @@ import logging
 from git import Repo
 from dash import html
 
-
+# Extract branches info
 def extract_branches_info(repo_path):
     try:
         repo = Repo(repo_path)
@@ -15,7 +15,7 @@ def extract_branches_info(repo_path):
         logging.error(f"Error extracting branches information: {e}")
         return {"error": str(e)}
 
-
+# Display branches info
 def display_branch_information(repo_path):
     branches_info = extract_branches_info(repo_path)
     if "error" in branches_info:

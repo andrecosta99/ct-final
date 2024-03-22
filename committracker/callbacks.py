@@ -12,6 +12,7 @@ PLUGIN_TITLES = {
     "branch_information": "Branch Information",
     "commit_type": "Commit Type",
     "contributors": "Project Contributers",
+    "code_quality": "Python Code Quality",
 }
 
 # Decorator to specify callback for input validation
