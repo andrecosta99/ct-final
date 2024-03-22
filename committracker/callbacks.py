@@ -10,6 +10,8 @@ PLUGIN_TITLES = {
     "git_statistics": "Git Statistics",
     "commit_graph": "Commit Graph",
     "branch_information": "Branch Information",
+    "commit_type": "Commit Type",
+    "contributors": "Project Contributers",
 }
 
 # Decorator to specify callback for input validation

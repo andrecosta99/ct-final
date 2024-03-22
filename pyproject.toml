@@ -34,6 +34,7 @@ clone_remote_repo = "commit_tracker.git_stats:clone_remote_repo"
 extract_git_stats = "commit_tracker.git_stats:extract_git_stats"
 extract_branches_info_new = "commit_tracker.git_stats:extract_branches_info_new"
 categorize_commit_type = "commit_tracker.git_stats:categorize_commit_type"
+
 [project.optional-dependencies]
 dev = [
     "black",
