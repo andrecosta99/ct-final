@@ -7,8 +7,17 @@ name = "commit-tracker"
 version = "0.1.0"
 description = "Commit Tracker analyzes Git repositories to present comprehensive statistics."
 authors = [{name = "André F. Costa", email = "afmcosta@gmail.com"}]
-license = {file = "LICENSE.txt"}
 readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["git", "analysis", "commit", "education"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Version Control :: Git"
+]
 dependencies = [
     "dash",
     "GitPython",
@@ -18,31 +27,59 @@ dependencies = [
 ]
 
 [project.entry-points.console_scripts]
-commit-tracker = "committracker.__main__:main"
-
+commit-tracker = "committracker.cli:main"
 
 [project.entry-points."commit_tracker.plugins"]
 clone_remote_repo = "commit_tracker.git_stats:clone_remote_repo"
 extract_git_stats = "commit_tracker.git_stats:extract_git_stats"
 extract_branches_info_new = "commit_tracker.git_stats:extract_branches_info_new"
 categorize_commit_type = "commit_tracker.git_stats:categorize_commit_type"
-
 [project.optional-dependencies]
 dev = [
-    "isort",
     "black",
-    "flake8",
-    "flake8-isort",
-    "flake8-black",
-    "flake8-bugbear",
-    "Flake8-pyproject",
+    "flake8 >= 6.0.0",
+    "isort",
     "mypy",
     "pre-commit",
-    "pytest >= 7.0",
-    "pytest-cov",
-    "pytest-mypy",
-    "coverage",
-    "mkdocs-material>=7.1.11",
-    "mkdocstrings[python]>=0.19.0",
-    "mkdocs-gallery",
+    "pytest >= 8.0",
+    "pytest-cov >= 3.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/andrecosta99/commit-tracker"
+Documentation = "https://andrecosta99/commit-tracker/"
+Repository = "https://andrecosta99/commit-tracker"
+
+[tool.setuptools]
+packages = ["committracker"]
+
+[tool.mypy]
+python_version = "3.10"
+check_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "--mypy --doctest-modules"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = [
+    "E203", # Incompatibilidade com Black sobre espaço antes de ':'
+    "W503"  # Incompatibilidade com PEP8 sobre quebra de linha antes de operadores binários
+]
+exclude = [
+    ".git",
+    "venv",
+    "__pycache__",
+    "build",
+    "dist"
 ]
