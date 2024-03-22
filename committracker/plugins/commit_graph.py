@@ -2,8 +2,9 @@ import pandas as pd
 import plotly.graph_objs as go
 from dash import dcc
 
-from .git_statistics import \
-    extract_git_stats  # Import the function to extract Git statistics
+from .git_statistics import (
+    extract_git_stats,  # Import the function to extract Git statistics
+)
 
 
 # Function to display a graph of commits over time for a given repository path

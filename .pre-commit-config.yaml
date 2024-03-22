@@ -17,15 +17,15 @@ repos:
     hooks:
       - id: flake8
         additional_dependencies:
-          - flake8-black
-          - flake8-builtins
-          - flake8-bugbear
-          - flake8-comprehensions
-          - flake8-docstrings
-          - flake8-isort
-          - flake8-pyproject
-          - flake8-pytest-style
-          - flake8-simplify
+           - flake8-black
+           - flake8-builtins
+           - flake8-bugbear
+           - flake8-comprehensions
+           - flake8-docstrings
+           - flake8-isort
+           - flake8-pyproject
+           - flake8-pytest-style
+           - flake8-simplify
 
   - repo: https://github.com/pycqa/isort
     rev: 5.10.1
@@ -37,7 +37,4 @@ repos:
     rev: v0.910
     hooks:
       - id: mypy
-        additional_dependencies:
-          - types-requests
-          - types-PyYAML
-          - types-python-dateutil
+        additional_dependencies: [types-requests, types-PyYAML, types-python-dateutil]

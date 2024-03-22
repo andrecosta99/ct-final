@@ -73,8 +73,8 @@ line_length = 88
 [tool.flake8]
 max-line-length = 88
 extend-ignore = [
-    "E203", # Incompatibilidade com Black sobre espaço antes de ':'
-    "W503"  # Incompatibilidade com PEP8 sobre quebra de linha antes de operadores binários
+    "E203",
+    "W503"
 ]
 exclude = [
     ".git",

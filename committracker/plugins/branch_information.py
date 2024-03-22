@@ -1,7 +1,8 @@
 from dash import html
 
-from .git_statistics import \
-    extract_branches_info  # Import the utility function to extract branch information
+from .git_statistics import (
+    extract_branches_info,  # Import the utility function to extract branch information
+)
 
 
 # Function to display branch information for a given repository path

@@ -1,6 +1,5 @@
 import dash_bootstrap_components as dbc
 from dash import dcc, html
-
 from .plugin_loader import load_plugins  # Import function to load plugins
 
 
@@ -68,7 +67,11 @@ def create_layout(app):
     plugin_error_message = html.Div(id="plugin-error-message", style={"color": "red"})
 
     # Area where plugin outputs will be displayed
-    plugin_output_area = html.Div(id="plugin-output-area")
+    plugin_output_area = dcc.Loading(
+        id="loading",
+        children=[html.Div(id="plugin-output-area")],
+        type="default"
+    )
 
     # Overall layout definition, including all components above
     layout = html.Div(
