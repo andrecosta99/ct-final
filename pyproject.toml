@@ -38,6 +38,15 @@ categorize_commit_type = "commit_tracker.git_stats:categorize_commit_type"
 dev = [
     "black",
     "flake8 >= 6.0.0",
+    "flake8-black",
+    "flake8-builtins",
+    "flake8-bugbear",
+    "flake8-comprehensions",
+    "flake8-docstrings",
+    "flake8-isort",
+    "Flake8-pyproject",
+    "flake8-pytest-style",
+    "flake8-simplify",
     "isort",
     "mypy",
     "pre-commit",
@@ -71,15 +80,25 @@ profile = "black"
 line_length = 88
 
 [tool.flake8]
+extend-select = ["B9", "C4"]
 max-line-length = 88
-extend-ignore = [
-    "E203",
-    "W503"
-]
+max-doc-length = 88
+ignore = [
+    "B905",  # Force `strict` in zip(), but this requires Python 3.10
+    "E203",  # "whitespace before ':'"", but that's how black likes it
+    "W503" ] # "line break before binary operator", conflicts with black
+
+doctests = true
 exclude = [
     ".git",
-    "venv",
     "__pycache__",
+    ".*cache",
     "build",
-    "dist"
-]
+    "dist",
+    "env",
+    "venv",
+    ".eggs",
+    "*.egg",
+    "docs" ]
+# flake8-docstrings
+docstring-convention = "google"
